@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import withToolTip from "./withToolTip";
 
 class Movie extends Component {
   render() {
@@ -6,4 +7,4 @@ class Movie extends Component {
   }
 }
 
-export default Movie;
+export default withToolTip(Movie);
