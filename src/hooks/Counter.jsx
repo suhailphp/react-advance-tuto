@@ -1,9 +1,13 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
   //setting string name in state using react hooks
   const [name, setName] = useState("");
+
+  useEffect(() => {
+    document.title = `Hello Mr ${name} , count is ${count}`;
+  });
 
   return (
     <Fragment>
