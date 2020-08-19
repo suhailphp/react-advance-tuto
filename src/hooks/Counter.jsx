@@ -7,7 +7,7 @@ const Counter = () => {
 
   useEffect(() => {
     document.title = `Hello Mr ${name} , count is ${count}`;
-  });
+  }, [name]);
 
   return (
     <Fragment>
