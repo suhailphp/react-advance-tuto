@@ -1,17 +1,12 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState } from "react";
+import useDocumentTitle from "./useDocumentTitle";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
   //setting string name in state using react hooks
   const [name, setName] = useState("");
 
-  useEffect(() => {
-    document.title = `Hello Mr ${name} , count is ${count}`;
-    //componentWillUnmount Code you can write here
-    return () => {
-      console.log("clean up");
-    };
-  });
+  useDocumentTitle(`Hello Mr ${name} , count is ${count}`);
 
   return (
     <Fragment>
