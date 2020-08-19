@@ -3,7 +3,12 @@ import withToolTip from "./withToolTip";
 
 class Movie extends Component {
   render() {
-    return <div>Movie</div>;
+    return (
+      <div>
+        Movie
+        {this.props.showToolTip && <div>This is a tool tip</div>}
+      </div>
+    );
   }
 }
 
