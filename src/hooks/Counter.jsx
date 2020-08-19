@@ -1,13 +1,22 @@
 import React, { Fragment, useState } from "react";
 
 const Counter = () => {
-  //this is for set state value, first obj is value name and second value is setState function for that value
   const [count, setCount] = useState(0);
-  //userState function use to set state Values
+  //setting string name in state using react hooks
+  const [name, setName] = useState("");
+
   return (
     <Fragment>
       <div>
-        This is Count of {count}
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <br />
+        <br />
+        hello {name},This is Count of {count}
         <button onClick={() => setCount(count + 1)}>Count</button>
       </div>
     </Fragment>
