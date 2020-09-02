@@ -1,8 +1,12 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 
 const Increment = () => {
   const [value, setValue] = useState(0);
   const [name, setName] = useState("");
+
+  useEffect(() => {
+    document.title = `${name} has clicked ${value} Times`;
+  });
   return (
     <Fragment>
       <input
