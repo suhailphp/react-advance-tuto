@@ -5,6 +5,7 @@ const Increment = () => {
   return (
     <Fragment>
       <div>Increment Value is {value}</div>
+      <button onClick={() => setValue(value + 1)}>Increment</button>
     </Fragment>
   );
 };
