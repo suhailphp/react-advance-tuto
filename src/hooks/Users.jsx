@@ -5,13 +5,24 @@ function Users(props) {
   const [users, setUser] = useState([]);
 
   useEffect(() => {
-    Axios.get("https://jsonplaceholder.typicode.com/users")
-      .then((users) => {
-        setUser(users.data);
-      })
-      .catch((error) => {
+    async function getUsers() {
+      try {
+        let result = await Axios.get(
+          "https://jsonplaceholder.typicsode.com/users"
+        );
+        setUser(result.data);
+      } catch (error) {
         console.log(error.message);
-      });
+      }
+    }
+    getUsers();
+    // Axios.get("https://jsonplaceholder.typicode.com/users")
+    //   .then((users) => {
+    //     setUser(users.data);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.message);
+    //   });
   });
 
   return (
