@@ -8,7 +8,7 @@ function Users(props) {
     async function getUsers() {
       try {
         let result = await Axios.get(
-          "https://jsonplaceholder.typicsode.com/users"
+          "https://jsonplaceholder.typicode.com/users"
         );
         setUser(result.data);
       } catch (error) {
