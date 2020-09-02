@@ -1,5 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import UserContext from "./userContext";
+import MovieRow from "./MovieRow";
 
 class MovieList extends Component {
   static contextType = UserContext;
@@ -10,7 +11,10 @@ class MovieList extends Component {
     return (
       <UserContext.Consumer>
         {(currentUser) => (
-          <div>This is movie list , name is {currentUser.name}</div>
+          <Fragment>
+            <div>This is movie list , name is {currentUser.name}</div>
+            <MovieRow />
+          </Fragment>
         )}
       </UserContext.Consumer>
     );
