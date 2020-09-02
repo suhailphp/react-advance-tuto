@@ -6,13 +6,23 @@ import "./App.css";
 //import Increment from "./hooks/Increment";
 import MoviePage from "./context/MoviePage";
 import UserContext from "./context/userContext";
+import Login from "./context/Login";
 
 class App extends Component {
-  state = { currentUser: { name: "Suhail" } };
+  state = { currentUser: null };
+  onUserLogin = (name) => {
+    this.setState({ currentUser: { name: name } });
+  };
   render() {
     return (
-      <UserContext.Provider value={this.state.currentUser}>
+      <UserContext.Provider
+        value={{
+          currentUser: this.state.currentUser,
+          onUserLogin: this.onUserLogin,
+        }}
+      >
         <MoviePage />
+        <Login />
       </UserContext.Provider>
     );
   }
