@@ -6,7 +6,8 @@ const Increment = () => {
 
   useEffect(() => {
     document.title = `${name} has clicked ${value} Times`;
-  });
+  }, [name, value]);
+
   return (
     <Fragment>
       <input
