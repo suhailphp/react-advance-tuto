@@ -6,6 +6,7 @@ import "./App.css";
 //import Increment from "./hooks/Increment";
 import MoviePage from "./context/MoviePage";
 import UserContext from "./context/userContext";
+import CartContext from "./context/cartContext";
 import Login from "./context/Login";
 
 class App extends Component {
@@ -15,15 +16,17 @@ class App extends Component {
   };
   render() {
     return (
-      <UserContext.Provider
-        value={{
-          currentUser: this.state.currentUser,
-          onUserLogin: this.onUserLogin,
-        }}
-      >
-        <MoviePage />
-        <Login />
-      </UserContext.Provider>
+      <CartContext.Provider value={{ cart: [] }}>
+        <UserContext.Provider
+          value={{
+            currentUser: this.state.currentUser,
+            onUserLogin: this.onUserLogin,
+          }}
+        >
+          <MoviePage />
+          <Login />
+        </UserContext.Provider>
+      </CartContext.Provider>
     );
   }
 }
